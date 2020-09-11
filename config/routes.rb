@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :installs
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'
+  }
+  devise_scope :user do
+    get 'user_infos', to: 'users/registrations#new_user_info'
+    post 'user_infos', to: 'users/registrations#create_user_info'
+  end
+
+  root to: "home#index"
 end
