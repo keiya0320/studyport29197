@@ -8,5 +8,7 @@ Rails.application.routes.draw do
     post 'user_infos', to: 'users/registrations#create_user_info'
   end
 
+  resources :posts
+
   root to: "home#index"
 end
