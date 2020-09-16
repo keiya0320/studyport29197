@@ -1,12 +1,12 @@
 <h1>トップページ</h1>
 
 <% if user_signed_in?%>
-  <h2>ログインしています</h2>
-  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+  <%= current_user.nickname + "さん" %><br>
+  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn" %>
 <% else %>
   <h2>ログインしていません</h2>
-  <%= link_to "新規登録", new_user_registration_path %>
-  <%= link_to "ログイン", new_user_session_path %>
+  <%= link_to "新規登録", new_user_registration_path, class: "btn" %>
+  <%= link_to "ログイン", new_user_session_path, class: "btn" %>
 <% end %>
 
 <div class="header">
@@ -24,6 +24,9 @@
   <div class="message-wrap">
     <% @posts.each do |post| %>
       <div class="message">
+        <p class="title">
+          <%= post.title %>
+        </p>
         <p class="text">
           <%= post.message %>
         </p>

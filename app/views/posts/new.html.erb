@@ -1,5 +1,9 @@
 <%= form_with model: @post, url: posts_path, class:'form-wrap', local: true do |f| %>
   <div class='message-form'>
+    <div class="title-field">
+      <%= f.label :title,  "タイトル" %>
+      <%= f.text_field :title, class:"input-title" %>
+    </div>
     <div class="message-field">
       <%= f.label :message,  "つぶやき" %>
       <%= f.text_area :message, class:"input-message" %>
