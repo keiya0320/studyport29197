@@ -1,5 +1,8 @@
 class PostsController < ApplicationController
 
+  before_action :authenticate_user!, only: [:new, :create]
+  before_action :getuser
+
   def index
     @posts = Post.all.order(created_at: :desc)
   end
@@ -11,6 +14,7 @@ class PostsController < ApplicationController
   def create
     @post = PostTag.new(post_params)
     if @post.valid?
+
       @post.save
       return redirect_to root_path
     else
@@ -28,6 +32,10 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post_tag).permit(:message, :name)
+    params.require(:post_tag).permit(:message, :name).merge(user_id: @user)
+  end
+
+  def getuser
+    @user = current_user.id
   end
 end
