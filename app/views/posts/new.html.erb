@@ -4,6 +4,12 @@
       <%= f.label :title,  "タイトル" %>
       <%= f.text_field :title, class:"input-title" %>
     </div>
+    <div class="form-image">
+    <label class="form-image">
+      <span class="image-file">画像</span>
+      <%= f.file_field :image, class: 'hidden' %>
+    </label>
+    </div>
     <div class="message-field">
       <%= f.label :message,  "つぶやき" %>
       <%= f.text_area :message, class:"input-message" %>

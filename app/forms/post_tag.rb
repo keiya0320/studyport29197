@@ -3,7 +3,7 @@ class PostTag
 
 
 
-  attr_accessor :title, :message, :name, :user_id
+  attr_accessor :title, :message, :name, :user_id, :image
 
   with_options presence: true do
     validates :title
@@ -12,8 +12,9 @@ class PostTag
     validates :user_id
   end
 
+
   def save
-      post = Post.new(title: title, message: message, user_id: user_id)
+      post = Post.new(title: title, message: message, user_id: user_id, image: image)
       post.save
       tag = Tag.where(name: name).first_or_initialize
       tag.save

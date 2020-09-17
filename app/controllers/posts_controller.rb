@@ -32,7 +32,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post_tag).permit(:title, :message, :name).merge(user_id: @user)
+    params.require(:post_tag).permit(:title, :message, :name, :image).merge(user_id: @user)
   end
 
   def getuser
