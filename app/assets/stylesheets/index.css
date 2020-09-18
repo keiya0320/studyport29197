@@ -126,3 +126,8 @@
   height: 10vh;
   text-align: center;
 }
+
+.more {
+  border-bottom: 1px solid black;
+}
+
