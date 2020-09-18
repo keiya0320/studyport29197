@@ -1,10 +1,58 @@
+<div class="top-page">
 <h1>トップページ</h1>
+</div>
 
-<% if user_signed_in?%>
-  <h2>ログインしています</h2>
-  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-<% else %>
-  <h2>ログインしていません</h2>
-  <%= link_to "新規登録", new_user_registration_path %>
-  <%= link_to "ログイン", new_user_session_path %>
-<% end %>
+
+
+<div class="header">
+  <div class="inner-header">
+    <h1 class="title">
+     Posts
+    </h1>
+    <li class='new-post'>
+      <%= link_to "New Post", new_post_path, class:"post-btn"%>
+    </li>
+  </div>
+</div>
+
+<div class="main">
+  <div class="message-wrap">
+    <% @posts.each do |post| %>
+      <div class="message">
+       
+        <div class="post-title">
+          <p>
+            <%= post.title %>
+          </p>
+        </div>
+        <div class="more">
+        <ul class="more_list">
+          <li class="post-menu">
+            <%= link_to '詳細', post_path(post.id), method: :get, class: "post-menu-link" %>
+          </li>
+          <li class="post-menu">
+            <%= link_to '削除', post_path(post.id), method: :delete, class: "post-menu-link" %>
+          </li>
+        </ul>
+      </div>
+        <div class="post-image">
+          <%= image_tag post.image.variant(resize:'300x300'), class: 'post-image' if post.image.attached? %>
+        </div>
+        <div class="post-text">
+          <p class="text">
+            <%= simple_format(post.message) %>
+          </p>
+        </div>
+        <div class="post-tag">
+          <ul class="tag">
+            <li class="tag-list">
+              <%post.tags.each do |tag| %>
+                <%=tag.name%>
+              <%end%>
+            </li>
+          </ul>
+        </div>
+      </div>
+    <%end%>
+  </div>
+</div>

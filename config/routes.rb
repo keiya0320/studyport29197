@@ -8,5 +8,11 @@ Rails.application.routes.draw do
     post 'user_infos', to: 'users/registrations#create_user_info'
   end
 
+  resources :posts, only: [:index, :new, :create, :destroy, :show] do
+    collection do
+      get 'search'
+    end
+  end
+
   root to: "home#index"
 end
