@@ -1,13 +1,8 @@
+<div class="top-page">
 <h1>トップページ</h1>
+</div>
 
-<% if user_signed_in?%>
-  <%= current_user.nickname + "さん" %><br>
-  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn" %>
-<% else %>
-  <h2>ログインしていません</h2>
-  <%= link_to "新規登録", new_user_registration_path, class: "btn" %>
-  <%= link_to "ログイン", new_user_session_path, class: "btn" %>
-<% end %>
+
 
 <div class="header">
   <div class="inner-header">
@@ -26,14 +21,17 @@
       <div class="message">
        
         <div class="post-title">
-          <p class="title">
+          <p>
             <%= post.title %>
           </p>
         </div>
         <div class="more">
         <ul class="more_list">
-          <li>
-            <%= link_to '削除', post_path(post.id), method: :delete %>
+          <li class="post-menu">
+            <%= link_to '詳細', post_path(post.id), method: :get, class: "post-menu-link" %>
+          </li>
+          <li class="post-menu">
+            <%= link_to '削除', post_path(post.id), method: :delete, class: "post-menu-link" %>
           </li>
         </ul>
       </div>

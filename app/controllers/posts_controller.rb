@@ -27,6 +27,10 @@ class PostsController < ApplicationController
     post.destroy
   end
 
+  def show
+    @post = Post.find(params[:id])
+  end
+
   def search
     return nil if params[:input] == ""
     tag = Tag.where(['name LIKE ?', "%#{params[:input]}%"])
