@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
   has_one :user_info
   has_many :posts
+  has_many :comments
 
   # extend ActiveHash::Associations::ActiveRecordExtensions
   # belongs_to_active_hash :grade_id
