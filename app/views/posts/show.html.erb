@@ -1,7 +1,7 @@
 <div class="contents row">
   <div class="content_post">
     <div class="post-title">
-      <p class="title">
+      <p>
         <%= @post.title %>
       </p>
     </div>
@@ -36,6 +36,19 @@
         <span>投稿者</span><%= @post.user.nickname %>
       </a>
     </span>
+  </div>
+
+  <div class="like-btn">
+  <h3>いいね件数：<%= @like_count %></h3>
+    <% if Like.find_by(user_id: @current_user.id, post_id: @post.id) %>
+      <%=link_to("/likes/#{@post.id}/destroy", {method: :post}) do %>
+        <span class="fa fa-heart like-btn-unlike"></span>
+      <% end %>
+    <% else %>
+      <%= link_to("/likes/#{@post.id}/create", {method: :post}) do %>
+        <span class="fa fa-heart like-btn"></span>
+      <% end %>
+    <% end %>
   </div>
 
   <div class="container">
