@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_action :getuser
 
   def index
-    @posts = Post.all.order(created_at: :desc)
+    @posts = Post.all.order(created_at: :desc).includes(:user)
   end
 
   def new
