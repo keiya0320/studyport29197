@@ -18,8 +18,12 @@
         </div>
         <div class="user-log">
           <% if user_signed_in?%>
+            <p class="current-user-name">
+            <%= current_user.nickname + "さん" %>
+            </p>
             <div class="user-log-1">
-            <%= current_user.nickname + "さん" %></div>
+            <%= link_to "マイページ", "/users/#{current_user.id}", class: "btn" %>
+            </div>
             <div class="user-log-2">
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn" %>
             </div>
