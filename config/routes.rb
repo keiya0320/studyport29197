@@ -17,5 +17,8 @@ Rails.application.routes.draw do
     
   end
 
+  post "likes/:post_id/create" => "likes#create"
+  post "likes/:post_id/destroy" => "likes#destroy"
+
   root to: "home#index"
 end
