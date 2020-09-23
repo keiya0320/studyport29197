@@ -3,5 +3,26 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
     @nickname = user.nickname
     @posts = user.posts.all.order(created_at: :desc)
+    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+    card = Card.find_by(user_id: current_user.id)
+
+    redirect_to new_card_path and return unless card.present?
+
+    customer = Payjp::Customer.retrieve(card.customer_token)
+    @card = customer.cards.first
+  end
+
+  def update
+    if current_user.update(user_params)
+      redirect_to root_path
+    else
+      redirect_to "show"
+    end
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:nickname, :email, :grade)
   end
 end
