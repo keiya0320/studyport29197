@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'cards/new'
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
@@ -20,7 +21,8 @@ Rails.application.routes.draw do
   post "likes/:post_id/create" => "likes#create"
   post "likes/:post_id/destroy" => "likes#destroy"
 
-  resources :users, only: :show
+  resources :users, only: [:show, :update]
+  resources :cards, only: [:new, :create]
 
   root to: "home#index"
 end
