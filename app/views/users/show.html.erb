@@ -2,6 +2,7 @@
   <div class="AccountPage__title">
     <h1>マイページ</h1>
   </div><br>
+  <% if current_user == User.find(params[:id]) %>
   <div class="Card__title">
     <h2>カード情報<h2>
   </div>
@@ -51,6 +52,17 @@
     <% end %>
   </div>
 </div>
+<% end %>
+
+<div class="user-info">
+<p class="user-info-title">教科</p>
+<%= User.find(params[:id]).user_info.subject %>
+<p class="user-info-title">学校</p>
+<%= User.find(params[:id]).user_info.school %>
+<p class="user-info-title">自己紹介</p>
+<%= User.find(params[:id]).user_info.profile %>
+</div>
+
 
 <div class="contents row">
   <p><%= @nickname %>さんの投稿一覧</p>
@@ -59,6 +71,7 @@
       <div class="post-title">
         <%= post.title %>
       </div>
+      <% if current_user == User.find(params[:id]) %>
       <div class="more">
         <ul class="more_list">
           <li class="post-menu">
@@ -69,9 +82,8 @@
           </li>
         </ul>
       </div>
-      <div class="post-image">
-          <%= image_tag post.image.variant(resize:'300x300'), class: 'post-image' if post.image.attached? %>
-      </div>
+      <% end %>
+          <%= image_tag post.image, class: 'image' if post.image.attached? %>
       <div class="post-text">
         <p class="text">
           <%= simple_format(post.message) %>

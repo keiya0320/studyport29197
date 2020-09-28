@@ -1,0 +1,466 @@
+@charset "UTF-8";
+
+
+
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.row {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: 660px;
+  *zoom: 1;
+}
+
+.row .grid-1,
+.row .grid-2,
+.row .grid-3,
+.row .grid-4,
+.row .grid-5,
+.row .grid-6,
+.row .grid-7,
+.row .grid-8,
+.row .grid-9,
+.row .grid-10,
+.row .grid-11,
+.row .grid-12 {
+  float: left;
+  margin-left: 0.9%;
+  margin-right: 0.9%;
+}
+
+.row .grid-1 {
+  width: 6.53333%;
+}
+
+.row .grid-2 {
+  width: 14.86667%;
+}
+
+.row .grid-3 {
+  width: 23.2%;
+}
+
+.row .grid-4 {
+  width: 31.53333%;
+}
+
+.row .grid-5 {
+  width: 39.86667%;
+}
+
+.row .grid-6 {
+  width: 48.2%;
+}
+
+.row .grid-7 {
+  width: 56.53333%;
+}
+
+.row .grid-8 {
+  width: 64.86667%;
+}
+
+.row .grid-9 {
+  width: 73.2%;
+}
+
+.row .grid-10 {
+  width: 81.53333%;
+}
+
+.row .grid-11 {
+  width: 89.86667%;
+}
+
+.row .grid-12 {
+  width: 98.2%;
+}
+
+.row:before,
+.row:after {
+  content: " ";
+  display: table;
+}
+
+.row:after {
+  clear: both;
+}
+
+.row.collapse>.column,
+.row.collapse>.columns {
+  position: relative;
+  padding-left: 0;
+  padding-right: 0;
+  float: left;
+}
+
+.row.collapse .row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.row .row {
+  width: auto;
+  margin-left: -0.9375em;
+  margin-right: -0.9375em;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: none;
+  *zoom: 1;
+}
+
+.row .row:before,
+.row .row:after {
+  content: " ";
+  display: table;
+}
+
+.row .row:after {
+  clear: both;
+}
+
+.row .row.collapse {
+  width: auto;
+  margin: 0;
+  max-width: none;
+  *zoom: 1;
+}
+
+.row .row.collapse:before,
+.row .row.collapse:after {
+  content: " ";
+  display: table;
+}
+
+.row .row.collapse:after {
+  clear: both;
+}
+
+@media only screen and (max-width: 40em) {
+
+  .row {
+    width: 100%;
+    padding: 0 20px !important;
+  }
+
+  .row .grid-1,
+  .row .grid-2,
+  .row .grid-3,
+  .row .grid-4,
+  .row .grid-5,
+  .row .grid-6,
+  .row .grid-7,
+  .row .grid-8,
+  .row .grid-9,
+  .row .grid-10,
+  .row .grid-11,
+  .row .grid-12 {
+    float: none;
+    width: 100% !important;
+    margin: 0 !important;
+    position: static !important;
+  }
+}
+
+
+/* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+body,
+html {
+  height: 100%;
+  background-color: #f5f5f3;
+}
+
+body {
+  padding-top: 60px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+body {
+  line-height: 1.57;
+  letter-spacing: 0.15em;
+  font-size: 16px;
+  color: #666;
+  font-family: 'Unica One', "Avenir", "游ゴシック", "YuGothic", "ヒラギノ角ゴ Pro W6", "HIragino Kaku Gothic Pro W6", "HIragino Kaku Gothic Pro", Osaka, Meiryo, "メイリオ", "ＭＳ Ｐゴシック", "MS P Gothic", sans-serif;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #666;
+}
+
+a:hover {
+  color: #57C3E9;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.serif,
+div.contents.row div.content_post p {
+  font-family: 'ほのか明朝', serif;
+}
+
+.ultra {
+  font-size: 2em !important;
+}
+
+::selection {
+  background: #D8D8D8;
+}
+
+.transition,
+a,
+form input[type="submit"] {
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -moz-transition-timing-function: linear;
+  -o-transition-timing-function: linear;
+  -webkit-transition-timing-function: linear;
+  transition-timing-function: linear;
+}
+
+.btn,
+header.header div.header__bar.row div.grid-6 a.post {
+  padding: 8px 20px;
+  font-size: 14px;
+  border: 2px solid #57C3E9;
+  color: #57C3E9;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.btn:hover,
+header.header div.header__bar.row div.grid-6 a.post:hover {
+  border-color: #9bdbf2;
+  color: #9bdbf2;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.title--big {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.title--big i {
+  font-style: italic;
+  font-size: 1.8em;
+}
+
+header.header {
+  padding: 10px;
+  border-bottom: 1px solid #D8D8D8;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  height: 62px;
+}
+
+header.header div.header__bar.row {
+  position: relative;
+}
+
+header.header div.header__bar.row h1.grid-6 {
+  font-size: 20px;
+  line-height: 41px;
+  float: left;
+}
+
+header.header div.header__bar.row h1.grid-6 a {
+  display: block;
+}
+
+header.header div.header__bar.row div.grid-6 {
+  float: right;
+  text-align: right;
+}
+
+header.header div.header__bar.row div.grid-6 a.post {
+  width: 120px;
+  display: inline-left;
+  margin-left: 10px;
+}
+
+header.header .user_nav {
+  position: relative;
+  height: 100px;
+  right: 0;
+}
+
+header.header .user_nav span {
+  top: 5px;
+  display: block;
+  float: left;
+  margin-left: 30px;
+  width: 150px;
+  height: 50px;
+  font-size: 1em;
+  cursor: pointer;
+  position: relative;
+}
+
+header.header .user_nav span:after {
+  content: '▼';
+  font-size: .7em;
+  margin-left: -4px;
+}
+
+header.header .user_nav span:hover ul {
+  color: #57C3E9;
+  display: block;
+}
+
+header.header .user_nav ul {
+  display: none;
+  position: absolute;
+  top: 46px;
+  right: 0;
+  border-left: 1px solid #d8d8d8;
+  border-right: 1px solid #d8d8d8;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header.header .user_nav ul li {
+  background-color: #f0f0f0;
+}
+
+header.header .user_nav ul li a {
+  display: block;
+  padding: 10px 20px;
+  text-align: left;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+
+
+
+
+form input,
+form textarea {
+  width: 100%;
+  margin: 5px 0 15px;
+  padding: 10px;
+  border: 1px solid #D8D8D8;
+  border-radius: 5px;
+  font-family: "游ゴシック", "YuGothic";
+}
+
+form input[type="submit"] {
+  background-color: #57C3E9;
+  border-radius: 20px;
+  color: #fff;
+  border: 0;
+  font-size: 18px;
+}
+
+form input[type="submit"]:hover {
+  background-color: #84d3ef;
+}
+
+.container {
+  margin: 20px 0;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
+  background-color: white;
+  box-sizing: border-box;
+}
+
+.container h3 {
+  margin: 0 0 20px;
+  text-align: center;
+  font-weight: normal;
+  font-size: 20px;
+  color: #666;
+}
+
+.comments {
+  padding: 5px;
+  margin-top: 15px;
+}
+
+.comments a {
+  color: #57C3E9;
+}
+
+.comments a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  margin: auto;
+  padding: 10px;
+  color: #D8D8D8;
+  background-color: white;
+}
+
+footer p {
+  text-align: center;
+}
+
+.search-form {
+  text-align: center;
+  padding-top: 32px;
+}
+
+.search-form .search-input {
+  width: 30%;
+  margin-right: 10px;
+}
+
+.search-form .search-btn {
+  width: 10%;
+} 
+
+
+.post-tag {
+  margin: 30px 0;
+  text-align: end;
+}
+
+.image {
+  width: 500px;
+  height: 300px;
+}
+
+.user-info {
+  text-align: center;
+  border-bottom: 3px solid white;
+}
+
+.user-info-title {
+  font-weight: bold;
+  margin: 50px auto;
+}

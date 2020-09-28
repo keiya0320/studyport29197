@@ -5,17 +5,19 @@
         <%= @post.title %>
       </p>
     </div>
+    <% if @post.user == current_user %>
     <div class="more">
-      <span><%= image_tag 'arrow_top.png' %></span>
       <ul class="more_list">
         <li>
           <%= link_to '削除', post_path(@post.id), method: :delete %>
         </li>
       </ul>
     </div>
-    <div class="post-image">
+    <% else %>
+    <% end %>
+    
       <%= image_tag @post.image.variant(resize:'300x300'), class: 'post-image' if @post.image.attached? %>
-    </div>
+    
     <div class="post-text">
       <p class="text">
         <%= simple_format(@post.message) %>
@@ -31,11 +33,11 @@
       </ul>
     </div>
 
-    <span >
+    <div class="posted-user-box">
       <a href="/users/<%= @post.user.id %>", class="posted-user">
         <span>投稿者</span><%= @post.user.nickname %>
       </a>
-    </span>
+    </div>
   </div>
 
   <div class="like-btn">
