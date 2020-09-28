@@ -18,11 +18,11 @@
 
 .post-image {
   display: block;
+  height: 250px;
 }
+
 .post-title {
-  color: black;
   font-size: 40px;
-  font-weight: bold;
   border-bottom:#666 1px solid;
 }
 
@@ -30,20 +30,6 @@
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
 }
 
-.all-header{
-  width: 100%;
-  height: 10vh;
-  background-color: #f8f8f8f8;
-  margin-bottom: 60px;
-}
-
-.header {
-  background-color: gray;
-  width: 50%;
-  margin: 10px 25%;
-  border-bottom: solid 6px #333333;
-  border-radius: 9px;
-}
 
 .inner-header{
   display: flex;
@@ -58,14 +44,6 @@
   font-size: 40px;
   font-weight: bold;
   border-bottom:#666 1px solid;
-}
-
-.new-post{
-  width: 100px;
-  height: 50px;
-  line-height: 50px;
-  margin-left: 50px;
-  text-align: center;
 }
 
 .post-btn{
@@ -90,40 +68,9 @@
 }
 
 .message-wrap{
-  width: 50%;
   height: 100%;
   background-color: white;
   overflow: scroll;
-}
-
-.message{
-  width: 100%;
-  height: 20%;
-  margin: 0px auto 500px;
-  padding: 0 20px;
-}
-
-.text{
-  height: 60%;
-  font-size: 20px;
-  display: flex;
-  align-items: center;
-}
-
-.tag{
-  height: 40%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  list-style: none;
-}
-
-.tag-list{
-  margin-bottom: 10px;
-}
-
-.post-text {
-  overflow-y: scroll;
 }
 
 .header__bar_row {
@@ -143,17 +90,12 @@
 
 .more {
   border-bottom: 1px solid black;
+  margin: 20px 20px ;
+  padding: 20px 50px;
 }
 
 .studyport {
   text-decoration: none;
-  color: white;
-}
-
-.more-list {
-  margin: 0 ;
-  padding: 0 ;
-
 }
 
 .post-menu {
@@ -161,9 +103,9 @@
   display: inline-block;
   width: 18%;
   min-width: 90px;
-  background: whitesmoke;/*背景色*/
-  border-left: double 7px #4ec4d3;/*左線*/
-  border-right: double 7px #4ec4d3;/*右線*/
+  background: whitesmoke;
+  border-left: double 7px #4ec4d3;
+  border-right: double 7px #4ec4d3;
   text-align: center;
   margin-right: 40px;
 }
@@ -173,14 +115,11 @@
   color: #474747;
 }
 
-.user-log {
+.posted-user-box {
   display: flex;
-  margin: 10px auto;
-}
-
-.user-log-1 {
-  margin-left: 20px;
-  margin-right: 30px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px auto;
 }
 
 .posted-user {
@@ -215,4 +154,8 @@
 
 .posted-user::before {
   bottom: 2px;
+}
+
+.message {
+  margin-bottom: 70px;
 }

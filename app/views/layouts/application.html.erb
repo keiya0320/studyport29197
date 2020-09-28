@@ -13,27 +13,28 @@
   </head>
 
   <body>
-      <header class="all-header">
-        <div class="header__bar_row">
-          <h1 class="grid-6"><a href="/", class="studyport">StudyPort</a></h1>
-        </div>
-        <div class="user-log">
+      <header class="header">
+        <div class="header__bar row">
+          <h1 class="grid-6"><a href="/">StudyPort</a></h1>
+        
+        
           <% if user_signed_in?%>
-            <p class="current-user-name">
+          <div class="user_nav grid-6">
+            <span>
             <%= current_user.nickname + "さん" %>
-            </p>
-            <div class="user-log-1">
-            <%= link_to "マイページ", "/users/#{current_user.id}", class: "btn" %>
-            </div>
-            <div class="user-log-2">
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn" %>
-            </div>
+            <ul class="user__info">
+              <li>
+                <%= link_to "マイページ", "/users/#{current_user.id}" %>
+                <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+              </li>
+            </ul>
+            </span>
+          </div>
           <% else %>
-            <div class="user-log-1">
-            <%= link_to "新規登録", new_user_registration_path, class: "btn" %>
-            </div>
-            <div class="user-log-2">
-            <%= link_to "ログイン", new_user_session_path, class: "btn" %>
+            <div class="grid-6">
+              <%= link_to "新規登録", new_user_registration_path %>
+              
+              <%= link_to "ログイン", new_user_session_path %>
             </div>
           <% end %>
         </div>
